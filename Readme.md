@@ -1,3 +1,11 @@
+
+## Product Vision
+
+### Vision Statement
+
+Blabla
+
+
 _TasteBudz_ Development Report
 
 Welcome to the documentation pages of the _TasteBudz_!
