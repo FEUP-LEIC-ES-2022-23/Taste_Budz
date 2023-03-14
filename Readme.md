@@ -13,9 +13,9 @@ You can find here details about the product (or mini-app or module), from a high
   * [User stories](https://github.com/FEUP-LEIC-ES-2022-23/2LEIC0105/blob/main/docs/Requirements.md#User-stories)
   * [Domain model](https://github.com/FEUP-LEIC-ES-2022-23/2LEIC0105/blob/main/docs/Requirements.md)
 * [Architecture and Design](https://github.com/FEUP-LEIC-ES-2022-23/2LEIC0105/blob/main/docs/ArchitectureAndDesign.md)
-  * [Logical architecture]
-  * [Physical architecture]
-  * [Vertical prototype]
+  * [Logical architecture](https://github.com/FEUP-LEIC-ES-2022-23/2LEIC0105/blob/main/docs/ArchitectureAndDesign.md#Logical-Architecture)
+  * [Physical architecture](https://github.com/FEUP-LEIC-ES-2022-23/2LEIC0105/blob/main/docs/ArchitectureAndDesign.md#Physical-Architecture)
+  * [Vertical prototype](https://github.com/FEUP-LEIC-ES-2022-23/2LEIC0105/blob/main/docs/ArchitectureAndDesign.md#Vertical-Prototype)
 * [Implementation]
 * [Test]
 * [Configuration and change management]
