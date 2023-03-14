@@ -72,9 +72,8 @@ History of Dining - A list of restaurants the user has been to before.
 
 - Tastewish - users are able to create a personalized list of restaurants they wish to try.
 
-- Foodie Chat - In-app messaging and chat functionality that allows users to communicate with friends and other food lovers.
 
 ## Required API's
 
-- Google Maps
-- Google Gmail
+- Google Maps Flutter Plugin (API) - https://pub.dev/packages/google_maps_flutter
+- Google Sign-in Plugin (API) - https://pub.dev/packages/google_sign_in
