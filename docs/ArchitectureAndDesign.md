@@ -14,9 +14,15 @@
 
 ## Physical architecture
    
-   The user interacts with the application using their own smartphone. The application then interacts with the Google maps API and the server that contains the user data. 
+   The physical architecture of the TasteBudz app includes three main components: the user's smartphone, the Google service machine, and TasteBudz's server. 
    
-   Login with google is a feature we intend on adding, so the server must interact with Google Sign-in Plugin.
+   The user's smartphone is the client that communicates with the Google service machine and TasteBudz's server using secure HTTPS requests. 
+   
+   The Google service machine provides location and mapping services through the Google Maps API, while TasteBudz's server stores and processes app data, including user profiles, restaurant information, ratings, and reviews. 
+   
+   Upon launching the app, necessary data is loaded from TasteBudz's server and stored locally on the smartphone to improve app performance. Interactions with the app, such as searching for a restaurant or leaving a review, send data to the server to update stored information and ensure all users have access to the most up-to-date data. 
+   
+   Overall, this physical architecture ensures that the app is responsive, reliable, and secure, providing users with the necessary information and functionality to discover great restaurants.
 
 <p align="center" justify="center">
   <img src="../images/physical.png"/>
