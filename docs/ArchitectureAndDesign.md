@@ -4,4 +4,4 @@
 
 ### Physical Architecture
 
-### Vertical prototype
+### Vertical Prototype
