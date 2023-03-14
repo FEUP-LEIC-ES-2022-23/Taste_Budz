@@ -12,7 +12,7 @@ You can find here details about the product (or mini-app or module), from a high
   * [Use Case Model](https://github.com/FEUP-LEIC-ES-2022-23/templates/blob/main/docs/requirements.md#Use-case-model)
   * [User stories](https://github.com/FEUP-LEIC-ES-2022-23/templates/blob/main/docs/requirements.md#User-stories)
   * [Domain model](https://github.com/FEUP-LEIC-ES-2022-23/templates/blob/main/docs/requirements.md#Domain-model)
-* [Architecture and Design](https://github.com/FEUP-LEIC-ES-2022-23/templates/blob/main/docs/ArchitectureAndDesign.md)
+* [Architecture and Design](https://github.com/FEUP-LEIC-ES-2022-23/2LEIC0105/blob/main/docs/ArchitectureAndDesign.md)
   * [Logical architecture]
   * [Physical architecture]
   * [Vertical prototype]
