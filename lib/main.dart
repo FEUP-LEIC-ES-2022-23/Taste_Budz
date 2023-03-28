@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tastebudz/Screens/Welcome/welcome_screen.dart';
 import 'package:tastebudz/constants.dart';
+import 'package:tastebudz/second.dart';
 import 'package:tastebudz/share_location.dart';
 
 import 'enjoy.dart';
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
               borderSide: BorderSide.none,
             ),
           )),
-      home: const WelcomeScreen(),
+      home: SecondScreen(),
     );
   }
 }
