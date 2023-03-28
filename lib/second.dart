@@ -16,7 +16,7 @@ class SecondScreen extends StatelessWidget {
               width: 360,
               height: 318,
               child: Image.asset(
-                'assets/images/stars.jpeg',
+                'assets/images/second.jpeg',
                 fit: BoxFit.cover,
               ),
             ),
