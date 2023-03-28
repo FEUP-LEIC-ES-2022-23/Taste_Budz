@@ -1,12 +1,48 @@
 import 'package:flutter/material.dart';
-import 'mainpage.dart';
-import 'api.dart';
+import 'package:tastebudz/Screens/Welcome/welcome_screen.dart';
+import 'package:tastebudz/constants.dart';
+import 'package:tastebudz/share_location.dart';
 
-void main() {
-  API new_api = API();
-  new_api.getInfo();
-  runApp(MaterialApp(
-    home: TasteBudzApp()
-  ));
+import 'enjoy.dart';
+import 'first.dart';
+import 'location.dart';
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'TasteBudz',
+      theme: ThemeData(
+          primaryColor: kPrimaryColor,
+          scaffoldBackgroundColor: Colors.white,
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              elevation: 0,
+              primary: kPrimaryColor,
+              shape: const StadiumBorder(),
+              maximumSize: const Size(double.infinity, 56),
+              minimumSize: const Size(double.infinity, 56),
+            ),
+          ),
+          inputDecorationTheme: const InputDecorationTheme(
+            filled: true,
+            fillColor: kPrimaryLightColor,
+            iconColor: kPrimaryColor,
+            prefixIconColor: kPrimaryColor,
+            contentPadding: EdgeInsets.symmetric(
+                horizontal: defaultPadding, vertical: defaultPadding),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(30)),
+              borderSide: BorderSide.none,
+            ),
+          )),
+      home: const WelcomeScreen(),
+    );
+  }
 }
-
