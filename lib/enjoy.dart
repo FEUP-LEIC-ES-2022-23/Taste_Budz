@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Screens/Login/login_screen.dart';
+import 'mainpage.dart';
 
 class EnjoyScreen extends StatelessWidget {
   @override
@@ -78,7 +79,7 @@ decoration: BoxDecoration(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return LoginScreen();
+                    return WelcomePage();
                   },
                 ),
               );
