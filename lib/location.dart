@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tastebudz/share_location.dart';
 
 import 'Screens/Login/login_screen.dart';
 import 'enjoy.dart';
@@ -80,7 +81,7 @@ class LocationScreen extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return const LoginScreen();
+                  return Androidlarge39Widget();
                 },
               ),
             );
