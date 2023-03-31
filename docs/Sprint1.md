@@ -7,20 +7,21 @@ https://github.com/FEUP-LEIC-ES-2022-23/2LEIC0105/releases/tag/v0.2.0
 
 ## What went well?
  
- - 
+ - Most of tasks completed in expected time;
  
 ## What didn't go so well?
 
 - Communication;
+- Bad work distribution;
 
  ## What have I learned?
 
-- 
+- Better understanding on how to use flutter;
 
 
  ## What still puzzles me?
 
-- Some of the Flutter syntax;
+- How to use flutter on a more advanced level;
 
  
  # Project Board
