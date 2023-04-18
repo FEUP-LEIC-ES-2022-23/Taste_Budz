@@ -9,13 +9,11 @@ https://github.com/FEUP-LEIC-ES-2022-23/2LEIC0105/releases/tag/v0.1.0
  
  - Tasks completed in expected time;
  - Splited tasks;
- - 
  
 ## What didn't go so well?
 
 - Communication;
 - Using github as a project management tool;
--  
   
 
  ## What have I learned?
@@ -28,8 +26,11 @@ https://github.com/FEUP-LEIC-ES-2022-23/2LEIC0105/releases/tag/v0.1.0
  ## What still puzzles me?
 
 - Some of the Flutter syntax;
-- 
+
  
  # Project Board
+ <p align="center" justify="center">
+  <img src="../images/BoardIteration0.png"/>
+</p>
  
  
