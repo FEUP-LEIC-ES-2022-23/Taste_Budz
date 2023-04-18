@@ -79,7 +79,7 @@ decoration: BoxDecoration(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return WelcomePage();
+                    return mainpage();
                   },
                 ),
               );
