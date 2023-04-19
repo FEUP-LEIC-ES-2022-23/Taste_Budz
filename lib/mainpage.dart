@@ -5,7 +5,7 @@ class mainpage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: DefaultTabController(
         length: 4,
         child: Scaffold(

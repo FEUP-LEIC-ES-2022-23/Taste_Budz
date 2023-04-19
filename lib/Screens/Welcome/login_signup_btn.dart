@@ -1,6 +1,6 @@
 
-import '../../Login/login_screen.dart';
-import '../../Signup/signup_screen.dart';
+import '../Login/login_screen.dart';
+import '../Signup/signup_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -12,19 +12,19 @@ class LoginAndSignupBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color.fromRGBO(255, 255, 255, 1),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+      padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Container(
-            decoration: BoxDecoration(),
-            padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+            decoration: const BoxDecoration(),
+            padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
+              children: const <Widget>[
                 Text(
                   'Let’s Get Started !',
                   textAlign: TextAlign.center,
@@ -54,28 +54,28 @@ class LoginAndSignupBtn extends StatelessWidget {
             ),
           ),
           
-          SizedBox(height: 50),
+          const SizedBox(height: 50),
           ElevatedButton(
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SignUpScreen();
+                    return const SignUpScreen();
                   },
                 ),
               );
             },
             style: ElevatedButton.styleFrom(
-              primary: Color(0xFFFFB080),
+              backgroundColor: const Color(0xFFFFB080),
               elevation: 0,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(17),
               ),
-              padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
             ),
 
-            child: Text(
+            child: const Text(
               "Get Started",
               style: TextStyle(
                 color: Colors.white,
@@ -84,41 +84,41 @@ class LoginAndSignupBtn extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 3),
+          const SizedBox(height: 3),
           Container(
-  decoration: BoxDecoration(
+  decoration: const BoxDecoration(
     color: Color.fromRGBO(255, 255, 255, 1),
   ),
-  padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+  padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
   child: Row(
     mainAxisSize: MainAxisSize.min,
     children: <Widget>[
       Container(
-  decoration: BoxDecoration(
+  decoration: const BoxDecoration(
     color: Color.fromRGBO(255, 255, 255, 1),
   ),
-  padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+  padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
   child: Row(
     mainAxisSize: MainAxisSize.min,
     children: <Widget>[
       Container(
-        decoration: BoxDecoration(),
-        padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+        decoration: const BoxDecoration(),
+        padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Container(
               height: 1,
               width: 100,
-              color: Color.fromRGBO(220, 220, 228, 1),
+              color: const Color.fromRGBO(220, 220, 228, 1),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Container(
-              decoration: BoxDecoration(),
-              padding: EdgeInsets.symmetric(horizontal: 4, vertical: 6),
+              decoration: const BoxDecoration(),
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
+                children: const <Widget>[
                   Text(
                     'OR',
                     semanticsLabel: 'OR',
@@ -126,11 +126,11 @@ class LoginAndSignupBtn extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Container(
               height: 1,
               width: 100,
-              color: Color.fromRGBO(220, 220, 228, 1),
+              color: const Color.fromRGBO(220, 220, 228, 1),
             ),
           ],
         ),
@@ -148,15 +148,15 @@ class LoginAndSignupBtn extends StatelessWidget {
     // Do something when the button is pressed
   },
   style: ElevatedButton.styleFrom(
-    primary: Colors.white,
+    backgroundColor: Colors.white,
     elevation: 0,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(17),
-      side: BorderSide(
+      side: const BorderSide(
         color: Colors.grey,
       ),
     ),
-    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+    padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
   ),
   child: Row(
     mainAxisSize: MainAxisSize.min,
@@ -165,8 +165,8 @@ class LoginAndSignupBtn extends StatelessWidget {
         'assets/images/gmail.png',
         height: 24,
       ),
-      SizedBox(width: 12),
-      Text(
+      const SizedBox(width: 12),
+      const Text(
         "Continue with Gmail",
         style: TextStyle(
           color: Colors.black,
@@ -178,39 +178,39 @@ class LoginAndSignupBtn extends StatelessWidget {
   ),
 ),
 Container(
-  decoration: BoxDecoration(
+  decoration: const BoxDecoration(
     color: Color.fromRGBO(255, 255, 255, 1),
   ),
-  padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+  padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
   child: Row(
     mainAxisSize: MainAxisSize.min,
     children: <Widget>[
       Container(
-  decoration: BoxDecoration(
+  decoration: const BoxDecoration(
     color: Color.fromRGBO(255, 255, 255, 1),
   ),
-  padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+  padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
   child: Row(
     mainAxisSize: MainAxisSize.min,
     children: <Widget>[
       Container(
-        decoration: BoxDecoration(),
-        padding: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+        decoration: const BoxDecoration(),
+        padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Container(
               height: 1,
               width: 100,
-              color: Color.fromRGBO(220, 220, 228, 1),
+              color: const Color.fromRGBO(220, 220, 228, 1),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Container(
-              decoration: BoxDecoration(),
-              padding: EdgeInsets.symmetric(horizontal: 4, vertical: 6),
+              decoration: const BoxDecoration(),
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
+                children: const <Widget>[
                   Text(
                     'OR',
                     semanticsLabel: 'OR',
@@ -218,11 +218,11 @@ Container(
                 ],
               ),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Container(
               height: 1,
               width: 100,
-              color: Color.fromRGBO(220, 220, 228, 1),
+              color: const Color.fromRGBO(220, 220, 228, 1),
             ),
           ],
         ),
@@ -240,7 +240,7 @@ Container(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return LoginScreen();
+                    return const LoginScreen();
                   },
                 ),
               );
@@ -250,13 +250,13 @@ Container(
               elevation: 0,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(17),
-                side: BorderSide(
+                side: const BorderSide(
                   color: Colors.grey,
                 ),
               ),
-              padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
             ),
-            child: Text(
+            child: const Text(
               "Log In",
               style: TextStyle(
                 color: Colors.black,

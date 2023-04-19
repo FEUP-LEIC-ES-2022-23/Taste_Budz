@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tastebudz/share_location.dart';
-
-import 'Screens/Login/login_screen.dart';
 import 'enjoy.dart';
 
 class LocationScreen extends StatelessWidget {
@@ -125,7 +123,7 @@ decoration: const BoxDecoration(
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return EnjoyScreen();
+                  return const EnjoyScreen();
                 },
               ),
             );

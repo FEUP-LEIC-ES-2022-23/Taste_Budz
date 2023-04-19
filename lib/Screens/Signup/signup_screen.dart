@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tastebudz/constants.dart';
 import 'package:tastebudz/responsive.dart';
 import '../../components/background.dart';
-import 'components/signup_form.dart';
+import 'signup_form.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -16,16 +15,9 @@ class SignUpScreen extends StatelessWidget {
           desktop: Row(
             children: [
               Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    SizedBox(
-                      width: 450,
-                      child: SignUpForm(),
-                    ),
-                    SizedBox(height: defaultPadding / 2),
-                    // SocalSignUp()
-                  ],
+                child: SizedBox(
+                  width: Responsive.isDesktop(context) ? 450 : double.infinity,
+                  child: const SignUpForm(),
                 ),
               )
             ],
@@ -37,9 +29,7 @@ class SignUpScreen extends StatelessWidget {
 }
 
 class MobileSignupScreen extends StatelessWidget {
-  const MobileSignupScreen({
-    Key? key,
-  }) : super(key: key);
+  const MobileSignupScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +46,6 @@ class MobileSignupScreen extends StatelessWidget {
             Spacer(),
           ],
         ),
-        // const SocalSignUp()
       ],
     );
   }

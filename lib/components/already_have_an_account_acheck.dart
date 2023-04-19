@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tastebudz/constants.dart';
 
 class AlreadyHaveAnAccountCheck extends StatelessWidget {
   final bool login;
@@ -19,7 +18,7 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
           login ? "Don’t have an Account ? " : "Already have an Account ? ",
           style: const TextStyle(color: Color.fromRGBO(0, 0, 0, 1),),
         ),
-        SizedBox(height: 70),
+        const SizedBox(height: 70),
         GestureDetector(
           
           onTap: press as void Function()?,

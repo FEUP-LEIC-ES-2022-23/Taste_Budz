@@ -1,11 +1,47 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import '../../../components/already_have_an_account_acheck.dart';
-import '../../../constants.dart';
-import '../../../location.dart';
-import '../../Login/login_screen.dart';
 
-class SignUpForm extends StatelessWidget {
-  const SignUpForm({Key? key}) : super(key: key);
+import '../../components/already_have_an_account_acheck.dart';
+import '../../constants.dart';
+import '../../location.dart';
+import '../Signup/signup_screen.dart';
+
+  class LoginForm extends StatefulWidget {
+  const LoginForm({Key? key}) : super(key: key);
+
+  @override
+  _LoginFormState createState() => _LoginFormState();
+  }
+
+  class _LoginFormState extends State<LoginForm> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  Future<void> _signUpWithEmailAndPassword() async {
+  try {
+  final UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
+  email: _emailController.text.trim(),
+  password: _passwordController.text.trim(),
+  );
+  Navigator.push(context, MaterialPageRoute(builder: (context) => const LocationScreen()));
+  } on FirebaseAuthException catch (e) {
+  if (e.code == 'weak-password') {
+  // Show an error message to the user if the password is too weak.
+  } else if (e.code == 'email-already-in-use') {
+  // Show an error message to the user if the email is already registered.
+  }
+  } catch (e) {
+  // Show a generic error message to the user.
+  }
+  }
+  @override
+  void initState() {
+  super.initState();
+  // Initialize Firebase app
+  Firebase.initializeApp();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +57,7 @@ class SignUpForm extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'Getting started!',
+                        'Login!',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.black,
@@ -34,7 +70,7 @@ class SignUpForm extends StatelessWidget {
                       ),
                       SizedBox(height: 14),
                       Text(
-                        'Look like you are new to us! Create an account for a complete experience.',
+                        'Welcome Back :)',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.black,
@@ -111,17 +147,17 @@ class SignUpForm extends StatelessWidget {
               primary: Color.fromARGB(255, 255, 177, 128),
             ),
             child: Text(
-              "Sign Up".toUpperCase(),
+              "Login".toUpperCase(),
               style: TextStyle(color: Colors.white),
             ),
           ),
           SizedBox(height: defaultPadding),
           AlreadyHaveAnAccountCheck(
-            login: false,
+            login: true,
             press: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LoginScreen()),
+                MaterialPageRoute(builder: (context) => SignUpScreen()),
               );
             },
           ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tastebudz/enjoy.dart';
 
 class Androidlarge39Widget extends StatefulWidget {
+  const Androidlarge39Widget({super.key});
+
   @override
   _Androidlarge39WidgetState createState() => _Androidlarge39WidgetState();
 }
@@ -9,7 +11,7 @@ class Androidlarge39Widget extends StatefulWidget {
 class _Androidlarge39WidgetState extends State<Androidlarge39Widget> {
   @override
   Widget build(BuildContext context) {
-    final titleText = 'Share your location with us !';
+    const titleText = 'Share your location with us !';
     final titleTextStyle = TextStyle(
       color: Color.fromRGBO(50, 50, 77, 1),
       fontFamily: 'DM Sans',
