@@ -20,7 +20,7 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
         ),
         const SizedBox(height: 70),
         GestureDetector(
-          
+
           onTap: press as void Function()?,
           child: Text(
             login ? "Sign Up" : "Log In",
