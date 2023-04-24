@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import '../components/already_have_an_account_acheck.dart';
+import 'package:tastebudz/components/already_have_an_account_acheck.dart';
 
 void main() {
   group('AlreadyHaveAnAccountCheck', () {

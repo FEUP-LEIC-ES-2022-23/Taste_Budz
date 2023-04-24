@@ -17,7 +17,7 @@ class SignUpScreen extends StatelessWidget {
               Expanded(
                 child: SizedBox(
                   width: Responsive.isDesktop(context) ? 450 : double.infinity,
-                  child: const SignUpForm(),
+                  child: SignUpPageWidget(),
                 ),
               )
             ],
@@ -41,7 +41,7 @@ class MobileSignupScreen extends StatelessWidget {
             Spacer(),
             Expanded(
               flex: 8,
-              child: SignUpForm(),
+              child: SignUpScreen(),
             ),
             Spacer(),
           ],

@@ -4,7 +4,7 @@ import 'package:tastebudz/share_location.dart';
 import 'package:tastebudz/enjoy.dart';
 
 
-import '../location.dart';
+import '../lib/location.dart';
 
 void main() {
   group('LocationScreen', () {

@@ -1,4 +1,7 @@
 
+import 'package:tastebudz/Screens/Signup/signup_form.dart';
+
+import '../Login/login_form.dart';
 import '../Login/login_screen.dart';
 import '../Signup/signup_screen.dart';
 
@@ -61,7 +64,7 @@ class LoginAndSignupBtn extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return const SignUpScreen();
+                    return SignUpPageWidget();
                   },
                 ),
               );
@@ -240,7 +243,7 @@ Container(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return const LoginScreen();
+                    return LoginPageWidget();
                   },
                 ),
               );
