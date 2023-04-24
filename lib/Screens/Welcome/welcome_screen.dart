@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../components/background.dart';
-import '../../responsive.dart';
+import '../../components/responsive.dart';
 import 'login_signup_btn.dart';
 
 class WelcomeScreen extends StatelessWidget {

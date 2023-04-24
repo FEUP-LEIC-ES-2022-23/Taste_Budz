@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tastebudz/enjoy.dart';
+import 'package:tastebudz/Screens/Welcome/enjoy.dart';
 
 class Androidlarge39Widget extends StatefulWidget {
   const Androidlarge39Widget({super.key});

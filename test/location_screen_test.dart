@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:tastebudz/share_location.dart';
-import 'package:tastebudz/enjoy.dart';
+import 'package:tastebudz/Screens/Welcome/share_location.dart';
+import 'package:tastebudz/Screens/Welcome/enjoy.dart';
 
 
-import '../lib/location.dart';
+import '../lib/Screens/Welcome/location.dart';
 
 void main() {
   group('LocationScreen', () {
