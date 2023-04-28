@@ -79,7 +79,7 @@ class LocationScreen extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return Androidlarge39Widget();
+                  return ShareLocationPage(onCitySelected: (String city) {  },);
                 },
               ),
             );

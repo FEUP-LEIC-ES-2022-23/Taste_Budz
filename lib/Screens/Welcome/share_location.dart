@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:tastebudz/Screens/Welcome/enjoy.dart';
 
-class Androidlarge39Widget extends StatefulWidget {
-  const Androidlarge39Widget({super.key});
+class ShareLocationPage extends StatefulWidget {
+  final void Function(String city) onCitySelected;
+
+  const ShareLocationPage({Key? key, required this.onCitySelected})
+      : super(key: key);
 
   @override
-  _Androidlarge39WidgetState createState() => _Androidlarge39WidgetState();
+  _ShareLocationPageState createState() => _ShareLocationPageState();
 }
 
-class _Androidlarge39WidgetState extends State<Androidlarge39Widget> {
+class _ShareLocationPageState extends State<ShareLocationPage> {
+  final _cityController = TextEditingController();
+
+  @override
+  void dispose() {
+    _cityController.dispose();
+    super.dispose();
+  }
   String _city = '';
   @override
   Widget build(BuildContext context) {
@@ -79,6 +89,7 @@ class _Androidlarge39WidgetState extends State<Androidlarge39Widget> {
             ),
             SizedBox(height: 8.0),
             TextFormField(
+              controller: _cityController,
               decoration: InputDecoration(
                 labelText: 'City',
                 hintText: 'e.g. Porto',
@@ -123,6 +134,8 @@ class _Androidlarge39WidgetState extends State<Androidlarge39Widget> {
               width: MediaQuery.of(context).size.width* 0.8,
               child: ElevatedButton(
                 onPressed: () {
+                  final city = _cityController.text;
+                  widget.onCitySelected(city);
                   Navigator.push(
                     context,
                     MaterialPageRoute(

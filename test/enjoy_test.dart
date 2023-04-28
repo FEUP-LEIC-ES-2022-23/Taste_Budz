@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../lib/Screens/Welcome/enjoy.dart';
-import '../lib/Screens/Main Page/mainpage.dart';
+import '../lib/Screens/mainpage.dart';
 
 void main() {
   testWidgets('EnjoyScreen should navigate to mainpage when start button is pressed', (WidgetTester tester) async {

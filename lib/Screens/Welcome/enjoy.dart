@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Main Page/mainpage.dart';
+import '../mainpage.dart';
 
 class EnjoyScreen extends StatelessWidget {
   const EnjoyScreen({super.key});
@@ -78,7 +78,7 @@ decoration: const BoxDecoration(
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return const mainpage();
+                  return mainpage();
                 },
               ),
             );
