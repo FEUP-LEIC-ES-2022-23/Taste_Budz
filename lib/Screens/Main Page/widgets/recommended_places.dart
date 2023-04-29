@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:tastebudz/Screens/Main Page/models/recommended_places_model.dart';
 import 'package:tastebudz/Screens/Main Page/pages/tourist_details_page.dart';
+import 'package:tastebudz/Screens/Perfil/page/details.dart';
+
+import '../models/Product.dart';
+import '../pages/details/details_screen.dart';
 
 class RecommendedPlaces extends StatelessWidget {
   const RecommendedPlaces({Key? key}) : super(key: key);
@@ -27,12 +31,13 @@ class RecommendedPlaces extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   onTap: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => TouristDetailsPage(
-                            image: recommendedPlaces[index].image,
-                          ),
-                        ));
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return DetailsScreen(product: demo_product[index],);
+                        },
+                      ),
+                    );
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(10),

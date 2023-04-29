@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tastebudz/Screens/Main Page/models/nearby_places_model.dart';
 import 'package:tastebudz/Screens/Main Page/pages/tourist_details_page.dart';
-import 'package:tastebudz/Screens/Main Page/widgets/distance.dart';
 
 class NearbyPlaces extends StatelessWidget {
   const NearbyPlaces({Key? key}) : super(key: key);
@@ -59,7 +58,7 @@ class NearbyPlaces extends StatelessWidget {
                             const Text("Portic Team"),
                             const SizedBox(height: 10),
                             // DISTANCE WIDGET
-                            const Distance(),
+
                             const Spacer(),
                             Row(
                               children: [
@@ -79,7 +78,7 @@ class NearbyPlaces extends StatelessWidget {
                                   text: TextSpan(
                                       style: TextStyle(
                                         fontSize: 20,
-                                        color: Theme.of(context).primaryColor,
+                                        color: Color(0xFFFFB080),
                                       ),
                                       text: "\$22",
                                       children: const [

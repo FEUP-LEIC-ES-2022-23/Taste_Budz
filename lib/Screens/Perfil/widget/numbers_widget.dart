@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../page/tastewish.dart';
+
 class NumbersWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Row(
@@ -20,7 +22,10 @@ class NumbersWidget extends StatelessWidget {
   Widget buildButton(BuildContext context, String value, String text) =>
       MaterialButton(
         padding: EdgeInsets.symmetric(vertical: 4),
-        onPressed: () {},
+        onPressed: () {Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => MyHomePage()),
+        );},
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         child: Container(
           width: 103.384765625,

@@ -9,6 +9,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tastebudz/Screens/Main%20Page/constants.dart';
 
 import '../widgets/search_form.dart';
+import '../../Notifications/notifcation_tap.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -47,7 +48,9 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
             icon: SvgPicture.asset("assets/icons/Notification.svg"),
-            onPressed: () {},
+            onPressed: () {
+              NotitcationTap();// call the function
+            },
           ),
         ],
       ),

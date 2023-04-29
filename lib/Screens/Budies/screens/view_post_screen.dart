@@ -124,11 +124,6 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
                                   ),
                                 ),
                                 subtitle: Text(widget.post.timeAgo),
-                                trailing: IconButton(
-                                  icon: Icon(Icons.more_horiz),
-                                  color: Colors.black,
-                                  onPressed: () => print('More'),
-                                ),
                               ),
                             ),
                           ],
@@ -182,7 +177,7 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
                                   Row(
                                     children: <Widget>[
                                       IconButton(
-                                        icon: Icon(Icons.chat),
+                                        icon: Icon(Icons.chat_bubble_outline),
                                         iconSize: 30.0,
                                         onPressed: () {
                                           print('Chat');
@@ -273,7 +268,7 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black45,
+                        color: Colors.black38,
                         offset: Offset(0, 2),
                         blurRadius: 6.0,
                       ),
@@ -294,9 +289,9 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
                   width: 70.0,
                   child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF23B66F),
+                      primary: Color(0xFFFFB080),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0),
+                        borderRadius: BorderRadius.circular(60.0),
                       ),
                     ),
                     onPressed: () => print('Post comment'),

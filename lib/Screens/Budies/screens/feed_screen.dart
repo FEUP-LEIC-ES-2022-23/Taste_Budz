@@ -56,11 +56,6 @@ class _FeedScreenState extends State<FeedScreen> {
                       ),
                     ),
                     subtitle: Text(posts[index].timeAgo),
-                    trailing: IconButton(
-                      icon: Icon(Icons.more_horiz),
-                      color: Colors.black,
-                      onPressed: () => print('More'),
-                    ),
                   ),
                   InkWell(
                     onDoubleTap: () => print('Like post'),
@@ -121,7 +116,7 @@ class _FeedScreenState extends State<FeedScreen> {
                             Row(
                               children: <Widget>[
                                 IconButton(
-                                  icon: Icon(Icons.chat),
+                                  icon: Icon(Icons.chat_bubble_outline),
                                   iconSize: 30.0,
                                   onPressed: () {
                                     Navigator.push(
@@ -145,11 +140,6 @@ class _FeedScreenState extends State<FeedScreen> {
                             ),
                           ],
                         ),
-                        IconButton(
-                          icon: Icon(Icons.bookmark_border),
-                          iconSize: 30.0,
-                          onPressed: () => print('Save post'),
-                        ),
                       ],
                     ),
                   ),
@@ -170,7 +160,7 @@ class _FeedScreenState extends State<FeedScreen> {
         physics: AlwaysScrollableScrollPhysics(),
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -205,6 +195,7 @@ class _FeedScreenState extends State<FeedScreen> {
                   width: 70.0,
                   height: 70.0,
                   decoration: BoxDecoration(
+                    color: Color(0xFFFFB080),
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
@@ -217,8 +208,8 @@ class _FeedScreenState extends State<FeedScreen> {
                   child: CircleAvatar(
                     child: ClipOval(
                       child: Image(
-                        height: 60.0,
-                        width: 60.0,
+                        height: 70.0,
+                        width: 70.0,
                         image: AssetImage(stories[index - 1]),
                         fit: BoxFit.cover,
                       ),

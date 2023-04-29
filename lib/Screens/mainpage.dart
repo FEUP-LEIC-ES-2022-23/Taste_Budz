@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'Budies/screens/feed_screen.dart';
 import 'Main Page/pages/home_page.dart';
+import 'Notifications/notifcation_tap.dart';
 import 'Perfil/page/profile_page.dart';
 
 class mainpage extends StatelessWidget {
@@ -11,6 +12,7 @@ class mainpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 4,
         child: Scaffold(
@@ -23,7 +25,7 @@ class mainpage extends StatelessWidget {
             children: [
               HomePage(),
               FeedScreen(),
-              Icon(Icons.circle_outlined),
+              NotitcationTap(),
               ProfilePage(),
             ],
           ),
@@ -31,7 +33,7 @@ class mainpage extends StatelessWidget {
             tabs: [
               Tab(icon: Icon(Icons.home_outlined)),
               Tab(icon: Icon(Icons.favorite_border_outlined)),
-              Tab(icon: Icon(Icons.circle_outlined)),
+              Tab(icon: Icon(Icons.notifications_none)),
               Tab(icon: Icon(Icons.person_outline)),
             ],
             labelColor: Color(0xFFFFB080),
