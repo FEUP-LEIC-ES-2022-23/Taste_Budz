@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tastebudz/Screens/Main%20Page/constants.dart';
 
-import 'package:tastebudz/Screens/Main Page/constants.dart';
 
 
 const OutlineInputBorder outlineInputBorder = OutlineInputBorder(
@@ -21,7 +21,7 @@ class SearchForm extends StatelessWidget {
         onSaved: (value) {},
         decoration: InputDecoration(
           filled: true,
-          fillColor: Colors.white,
+          fillColor: Colors.grey[80],
           hintText: "Search items...",
           border: outlineInputBorder,
           enabledBorder: outlineInputBorder,
@@ -39,7 +39,7 @@ class SearchForm extends StatelessWidget {
               height: 48,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: primaryColor,
+                  primary: Colors.orangeAccent[200],
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),

@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  ionicons: any
 
   flutter:
     sdk: flutter
@@ -71,6 +72,10 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/splash_screen.jpeg
+    - assets/images/
+    - assets/places/
+    - assets/icons/
+    - assets/
 
 #  fonts:
 #    - family: Manrope
