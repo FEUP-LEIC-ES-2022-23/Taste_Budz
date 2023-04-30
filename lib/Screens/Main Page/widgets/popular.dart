@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:tastebudz/Screens/Main Page/models/recommended_places_model.dart';
-import 'package:tastebudz/Screens/Main Page/pages/tourist_details_page.dart';
+import 'package:tastebudz/Screens/Main Page/models/popular_model.dart';
 import 'package:tastebudz/Screens/Perfil/page/details.dart';
 
 import '../models/Product.dart';
-import '../pages/details/details_screen.dart';
+
+import '../pages/details/view/product_details.dart';
 
 class RecommendedPlaces extends StatelessWidget {
   const RecommendedPlaces({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class RecommendedPlaces extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return DetailsScreen(product: demo_product[index],);
+                          return ProductDetailsView();
                         },
                       ),
                     );
@@ -56,7 +56,7 @@ class RecommendedPlaces extends StatelessWidget {
                         Row(
                           children: [
                             const Text(
-                              "St Regis Bora Bora",
+                              "Abadia do Porto",
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
@@ -81,12 +81,12 @@ class RecommendedPlaces extends StatelessWidget {
                           children: [
                             Icon(
                               Ionicons.location,
-                              color: Theme.of(context).primaryColor,
+                              color: Colors.orangeAccent,
                               size: 16,
                             ),
                             const SizedBox(width: 5),
                             const Text(
-                              "French Polynesia",
+                              "Porto, Portugal",
                               style: TextStyle(
                                 fontSize: 12,
                               ),

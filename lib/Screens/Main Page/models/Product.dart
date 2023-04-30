@@ -18,22 +18,22 @@ class Product {
 
 List<Product> demo_product = [
   Product(
-    image: "assets/images/user4.png",
-    title: "Long Sleeve Shirts",
+    image: "assets/images/restaurante1.png",
+    title: "Abadia do Porto",
     price: 165,
     rating: 4,
     numOfReviews: 23,
     bgColor: const Color(0xFFFEFBF9),
   ),
   Product(
-    image: "assets/images/product_1.png",
+    image: "assets/images/restaurante1.png",
     title: "Casual Henley Shirts",
     price: 99,
     rating: 3,
     numOfReviews: 12,
   ),
   Product(
-    image: "assets/images/product_2.png",
+    image: "assets/images/restaurante1.png",
     title: "Curved Hem Shirts",
     price: 180,
     rating: 5,
@@ -41,7 +41,7 @@ List<Product> demo_product = [
     bgColor: const Color(0xFFF8FEFB),
   ),
   Product(
-    image: "assets/images/product_3.png",
+    image: "assets/images/restaurante1.png",
     title: "Casual Nolin",
     price: 149,
     rating: 4,

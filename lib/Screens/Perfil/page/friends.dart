@@ -1,15 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tastebudz/Screens/Perfil/page/profile_page.dart';
+import 'package:tastebudz/Screens/mainpage.dart';
 
 import 'details.dart';
 
-class Tastewish extends StatefulWidget {
+class Friends extends StatefulWidget {
   @override
-  _TastewishState createState() => _TastewishState();
+  _FriendsState createState() => _FriendsState();
 }
 
-class _TastewishState extends State<Tastewish> {
+class _FriendsState extends State<Friends> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +27,7 @@ class _TastewishState extends State<Tastewish> {
                   color: Colors.white,
                   onPressed: () {Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ProfilePage()),
+                    MaterialPageRoute(builder: (context) => mainpage()),
                   );},
                 ),
               ],
@@ -37,14 +38,14 @@ class _TastewishState extends State<Tastewish> {
             padding: EdgeInsets.only(left: 40.0),
             child: Row(
               children: <Widget>[
-                Text('Taste',
+                Text('Foodie',
                     style: TextStyle(
                         fontFamily: 'Manrope',
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 30.0)),
                 SizedBox(width: 0),
-                Text('Wish',
+                Text('Budz',
                     style: TextStyle(
                         fontFamily: 'Manrope',
                         color: Colors.white,

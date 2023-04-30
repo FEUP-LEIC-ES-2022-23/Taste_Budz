@@ -69,35 +69,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ),
               ),
-            Positioned(
-                right: 19,
-                top: 2,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(160),
-                    ),
-                    primary: Colors.white,
-                    elevation: 4,
-                    side: BorderSide(
-                      color: Color(0xffe6f0f5),
-                    ),
-                  ),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    height: 63,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(Icons.notifications_none, color: Colors.black, size: 33),
-                        SizedBox(width: 0),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ],
@@ -188,7 +159,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   width: 8,
                                   height: 8,
                                   child: Image.network(
-                                    'whie.png',
+                                    "assets/images/restaurante1.jpg",
                                     width: 8,
                                     height: 8,
                                   ),

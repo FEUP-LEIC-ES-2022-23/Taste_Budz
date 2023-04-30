@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tastebudz/Screens/Main Page/models/nearby_places_model.dart';
-import 'package:tastebudz/Screens/Main Page/pages/tourist_details_page.dart';
+
+
+import '../pages/details/view/product_details.dart';
 
 class NearbyPlaces extends StatelessWidget {
   const NearbyPlaces({Key? key}) : super(key: key);
@@ -25,8 +27,8 @@ class NearbyPlaces extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => TouristDetailsPage(
-                          image: nearbyPlaces[index].image,
+                        builder: (context) => ProductDetailsView(
+
                         ),
                       ));
                 },
@@ -48,15 +50,34 @@ class NearbyPlaces extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              "Sea of Peace",
+                            Text(
+                              'Casa de Pasto da Palmeira',
+                              textAlign: TextAlign.left,
                               style: TextStyle(
+                                color: Color(0xFF111111),
+                                fontFamily: 'Manrope',
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
+                                letterSpacing: 0.0,
+                                height: 1.5,
                               ),
                             ),
-                            const Text("Portic Team"),
-                            const SizedBox(height: 10),
+
+                            const SizedBox(height: 5),
+                            Text(
+                              "Comida tradicional portuguesa",
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                  color: Color.fromRGBO(120, 130, 138, 1),
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  fontSize: 15,
+                                  letterSpacing: 0,
+                                  fontWeight: FontWeight.normal,
+                                  height: 1.6666666666666667
+                              ),
+                            ),
+
+                            const SizedBox(height: 5),
                             // DISTANCE WIDGET
 
                             const Spacer(),
@@ -65,12 +86,12 @@ class NearbyPlaces extends StatelessWidget {
                                 Icon(
                                   Icons.star,
                                   color: Colors.yellow.shade700,
-                                  size: 14,
+                                  size: 16,
                                 ),
                                 const Text(
                                   "4.5",
                                   style: TextStyle(
-                                    fontSize: 12,
+                                    fontSize: 14,
                                   ),
                                 ),
                                 const Spacer(),
@@ -80,14 +101,14 @@ class NearbyPlaces extends StatelessWidget {
                                         fontSize: 20,
                                         color: Color(0xFFFFB080),
                                       ),
-                                      text: "\$22",
+                                      text: "",
                                       children: const [
                                         TextSpan(
                                             style: TextStyle(
                                               fontSize: 12,
                                               color: Colors.black54,
                                             ),
-                                            text: "/ Person")
+                                            text: "")
                                       ]),
                                 )
                               ],

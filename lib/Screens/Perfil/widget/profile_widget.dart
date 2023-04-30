@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:tastebudz/Screens/Perfil/page/friends.dart';
 
 class ProfileWidget extends StatelessWidget {
   final String imagePath;
@@ -25,7 +26,7 @@ class ProfileWidget extends StatelessWidget {
           Positioned(
             bottom: 3,
             right: 24,
-            child: buildEditIcon(color),
+            child: buildEditIcon(context, color),
           ),
         ],
       ),
@@ -48,10 +49,16 @@ class ProfileWidget extends StatelessWidget {
       ),
     );
   }
-  Widget buildEditIcon(Color color, {bool isEdit = false}) {
+
+  Widget buildEditIcon(BuildContext context, Color color, {bool isEdit = false}) {
     return ElevatedButton(
       onPressed: () {
-        // code to handle button press
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Friends(),
+          ),
+        );
       },
       style: ElevatedButton.styleFrom(
         primary: Colors.white,
@@ -74,6 +81,8 @@ class ProfileWidget extends StatelessWidget {
       ),
     );
   }
+
+
 
 
   Widget buildCircle({

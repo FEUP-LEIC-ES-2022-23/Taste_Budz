@@ -3,7 +3,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:tastebudz/Screens/Main Page/widgets/custom_icon_button.dart';
 import 'package:tastebudz/Screens/Main Page/widgets/location_card.dart';
 import 'package:tastebudz/Screens/Main Page/widgets/nearby_places.dart';
-import 'package:tastebudz/Screens/Main Page/widgets/recommended_places.dart';
+import 'package:tastebudz/Screens/Main Page/widgets/popular.dart';
 import 'package:tastebudz/Screens/Main Page/widgets/tourist_places.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tastebudz/Screens/Main%20Page/constants.dart';
@@ -47,9 +47,12 @@ class HomePage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            icon: SvgPicture.asset("assets/icons/Notification.svg"),
+            icon: Icon(Icons.notifications),
             onPressed: () {
-              NotitcationTap();// call the function
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NotitcationTap()),
+              );
             },
           ),
         ],
@@ -86,7 +89,7 @@ class HomePage extends StatelessWidget {
               child: SearchForm(),
             ),
             const SizedBox(
-              height: 12,
+              height: 2,
             ),
             const TouristPlaces(),
             // CATEGORIES
@@ -95,13 +98,18 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Recommendation",
+                  "Popular in Porto",
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
-                TextButton(onPressed: () {}, child: const Text("View All"))
+                TextButton(
+                  onPressed: () {},
+                  child: const Text("View All"),
+                  style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all<Color>(const Color(0xFFFFB080)),
+                  ),
+                )
               ],
             ),
-            const SizedBox(height: 10),
             const RecommendedPlaces(),
             const SizedBox(height: 10),
             Row(
@@ -111,7 +119,13 @@ class HomePage extends StatelessWidget {
                   "Nearby From You",
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
-                TextButton(onPressed: () {}, child: const Text("View All"))
+                TextButton(
+                  onPressed: () {},
+                  child: const Text("View All"),
+                  style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all<Color>(const Color(0xFFFFB080)),
+                  ),
+                )
               ],
             ),
             const SizedBox(height: 10),
