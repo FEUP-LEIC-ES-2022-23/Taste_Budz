@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
@@ -8,6 +9,8 @@ import 'package:tastebudz/Screens/Main Page/pages/details/controller/product_con
 import 'package:tastebudz/Screens/Main Page/pages/details/model/sm_product_model.dart';
 import 'package:tastebudz/Screens/Main Page/pages/details/utils/color.dart';
 import 'package:tastebudz/Screens/mainpage.dart';
+
+import '../../../rating/rating_page.dart';
 
 class ProductDetailsView extends StatefulWidget {
   ProductDetailsView({Key? key}) : super(key: key);
@@ -162,6 +165,144 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                           ),
                         ),
                         const SizedBox(height: 20),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Comments",
+                              style: GoogleFonts.poppins(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => RatingPage()),
+                                );
+                              },
+                              child: Text("View All",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xFFFFB080)
+                                ),),
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Container(
+                                margin:
+                                const EdgeInsets.symmetric(vertical: 4.0),
+                                padding: const EdgeInsets.all(8.0),
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.all(
+                                        Radius.circular(20.0))),
+                                child: Row(
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Padding(
+                                      padding:
+                                      const EdgeInsets.only(right: 16.0),
+                                      child: CircleAvatar(
+                                        maxRadius: 20,
+                                        backgroundImage: AssetImage(
+                                            'assets/background.jpg'),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                        children: <Widget>[
+                                          Row(
+                                            mainAxisAlignment:
+                                            MainAxisAlignment
+                                                .spaceBetween,
+                                            children: <Widget>[
+                                              Text(
+                                                'Billy Holand',
+                                                style: GoogleFonts.poppins(
+                                                  fontSize: 17,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                              ),
+                                              Text(
+                                                '10:28h',
+                                                style: GoogleFonts.poppins(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: Colors.grey,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                          Padding(
+                                            padding:
+                                            const EdgeInsets.symmetric(
+                                                vertical: 8.0),
+                                            child: RatingBar(
+                                              ignoreGestures: true,
+                                              itemSize: 20,
+                                              allowHalfRating: true,
+
+                                              itemPadding:
+                                              EdgeInsets.symmetric(
+                                                  horizontal: 3.0),
+                                              ratingWidget: RatingWidget(
+                                                empty: Icon(
+                                                    Icons.star_border_outlined,
+                                                    color: Colors.orangeAccent,
+                                                    size: 20),
+                                                full: Icon(
+                                                  Icons.star,
+                                                  color: Colors.orangeAccent,
+                                                  size: 20,
+                                                ),
+                                                half: SizedBox(),
+                                              ),
+                                              onRatingUpdate: (value) {
+                                                setState(() {
+
+                                                });
+                                                print(value);
+                                              },
+                                            ),
+                                          ),
+                                          Text(
+                                            'Not as I expected! ... I`m really sad',
+                                            style: GoogleFonts.poppins(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.normal,
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                            const EdgeInsets.symmetric(
+                                                vertical: 16.0),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                              MainAxisAlignment
+                                                  .spaceBetween,
+                                              children: <Widget>[
+
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ))
+
+                          ],
+                        )
                       ],
                     ),
                   ),

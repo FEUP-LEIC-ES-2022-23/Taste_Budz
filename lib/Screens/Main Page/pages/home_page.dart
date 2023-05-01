@@ -8,6 +8,7 @@ import 'package:tastebudz/Screens/Main Page/widgets/tourist_places.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tastebudz/Screens/Main%20Page/constants.dart';
 
+import '../rating/rating_page.dart';
 import '../widgets/search_form.dart';
 import '../../Notifications/notifcation_tap.dart';
 
@@ -102,7 +103,9 @@ class HomePage extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   child: const Text("View All"),
                   style: ButtonStyle(
                     foregroundColor: MaterialStateProperty.all<Color>(const Color(0xFFFFB080)),
