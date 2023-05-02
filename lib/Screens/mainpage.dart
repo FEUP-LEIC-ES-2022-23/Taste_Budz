@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 import 'Budies/screens/feed_screen.dart';
 import 'Main Page/pages/home_page.dart';
 import 'Notifications/notifcation_tap.dart';

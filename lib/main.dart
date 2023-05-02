@@ -3,16 +3,8 @@ import 'dart:ui';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tastebudz/Screens/Login/login_form.dart';
-
 import 'package:tastebudz/components/constants.dart';
 import 'package:tastebudz/Screens/Welcome/second.dart';
-
-import 'firebase/firebase_options.dart';
-
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

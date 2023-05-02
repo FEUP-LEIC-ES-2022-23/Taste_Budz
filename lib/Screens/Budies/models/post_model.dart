@@ -15,25 +15,25 @@ class Post {
 final List<Post> posts = [
   Post(
     authorName: 'Sam Martin',
-    authorImageUrl: 'assets/images/user0.png',
+    authorImageUrl: 'assets/images/Joana.jpg',
     timeAgo: '5 min',
-    imageUrl: 'assets/images/post0.jpg',
+    imageUrl: 'assets/images/food.jpg',
   ),
   Post(
     authorName: 'Sam Martin',
-    authorImageUrl: 'assets/images/user0.png',
+    authorImageUrl: 'assets/images/Joana.jpg',
     timeAgo: '10 min',
-    imageUrl: 'assets/images/post1.jpg',
+    imageUrl: 'assets/images/food.jpg',
   ),
 ];
 
 final List<String> stories = [
   'assets/images/perfill.JPG',
-  'assets/images/perfill.JPG',
-  'assets/images/perfill.JPG',
-  'assets/images/perfill.JPG',
-  'assets/images/perfill.JPG',
-  'assets/images/perfill.JPG',
-  'assets/images/perfill.JPG',
-  'assets/images/perfill.JPG',
+  'assets/images/Joana.jpg',
+  'assets/images/Joana.jpg',
+  'assets/images/Joana.jpg',
+  'assets/images/Joana.jpg',
+  'assets/images/Joana.jpg',
+  'assets/images/Joana.jpg',
+  'assets/images/Joana.jpg',
 ];

@@ -32,7 +32,7 @@ List<RecommendedPlaceModel> recommendedPlaces = [
     location: "St. Regis Bora Bora",
   ),
   RecommendedPlaceModel(
-    image: "assets/places/place1.jpg",
+    image: "assets/images/restaurante1.jpg",
     rating: 3.4,
     location: "St. Regis Bora Bora",
   ),

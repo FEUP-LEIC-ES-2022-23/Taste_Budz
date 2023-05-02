@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tastebudz/Screens/Budies/models/post_model.dart';
 import 'package:tastebudz/Screens/Budies/screens/view_post_screen.dart';
 
+import 'Stories/storypage.dart';
+
 class FeedScreen extends StatefulWidget {
   @override
   _FeedScreenState createState() => _FeedScreenState();
@@ -34,7 +36,7 @@ class _FeedScreenState extends State<FeedScreen> {
                           BoxShadow(
                             color: Colors.black45,
                             offset: Offset(0, 2),
-                            blurRadius: 6.0,
+                            blurRadius: 10.0,
                           ),
                         ],
                       ),
@@ -74,14 +76,7 @@ class _FeedScreenState extends State<FeedScreen> {
                       width: double.infinity,
                       height: 400.0,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25.0),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black45,
-                            offset: Offset(0, 5),
-                            blurRadius: 8.0,
-                          ),
-                        ],
+
                         image: DecorationImage(
                           image: AssetImage(posts[index].imageUrl),
                           fit: BoxFit.fitWidth,
@@ -160,7 +155,7 @@ class _FeedScreenState extends State<FeedScreen> {
         physics: AlwaysScrollableScrollPhysics(),
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 35),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -192,33 +187,31 @@ class _FeedScreenState extends State<FeedScreen> {
                 }
                 return Container(
                   margin: EdgeInsets.all(10.0),
-                  width: 70.0,
-                  height: 70.0,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFFFB080),
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black45,
-                        offset: Offset(0, 2),
-                        blurRadius: 6.0,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StoryPage(),
+                        ),
+                      );
+                    },
+
+                      child: ClipOval(
+                        child: Image(
+                          height: 70.0,
+                          width: 70.0,
+                          image: AssetImage(stories[index - 1]),
+                          fit: BoxFit.cover,
+                        ),
                       ),
-                    ],
-                  ),
-                  child: CircleAvatar(
-                    child: ClipOval(
-                      child: Image(
-                        height: 70.0,
-                        width: 70.0,
-                        image: AssetImage(stories[index - 1]),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
+                    )
                 );
               },
             ),
           ),
+
+
           _buildPost(0),
           _buildPost(1),
         ],

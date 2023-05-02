@@ -20,14 +20,6 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
           width: 50.0,
           height: 50.0,
           decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black45,
-                offset: Offset(0, 2),
-                blurRadius: 6.0,
-              ),
-            ],
           ),
           child: CircleAvatar(
             child: ClipOval(
@@ -47,13 +39,6 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
           ),
         ),
         subtitle: Text(comments[index].text),
-        trailing: IconButton(
-          icon: Icon(
-            Icons.favorite_border,
-          ),
-          color: Colors.grey,
-          onPressed: () => print('Like comment'),
-        ),
       ),
     );
   }
@@ -69,11 +54,7 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
             Container(
               padding: EdgeInsets.only(top: 40.0),
               width: double.infinity,
-              height: 600.0,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(25.0),
-              ),
+
               child: Column(
                 children: <Widget>[
                   Padding(
@@ -95,16 +76,7 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
                                 leading: Container(
                                   width: 50.0,
                                   height: 50.0,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black45,
-                                        offset: Offset(0, 2),
-                                        blurRadius: 6.0,
-                                      ),
-                                    ],
-                                  ),
+
                                   child: CircleAvatar(
                                     child: ClipOval(
                                       child: Image(
@@ -135,14 +107,6 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
                             width: double.infinity,
                             height: 400.0,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(25.0),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black45,
-                                  offset: Offset(0, 5),
-                                  blurRadius: 8.0,
-                                ),
-                              ],
                               image: DecorationImage(
                                 image: AssetImage(widget.post.imageUrl),
                                 fit: BoxFit.fitWidth,

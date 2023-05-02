@@ -68,10 +68,10 @@ class _TastewishState extends State<Tastewish> {
                     child: Container(
                         height: MediaQuery.of(context).size.height - 300.0,
                         child: ListView(children: [
-                          _buildFoodItem('assets/images/user0.png', 'Salmon bowl', '\$24.00'),
-                          _buildFoodItem('assets/images/user0.png', 'Spring bowl', '\$22.00'),
-                          _buildFoodItem('assets/images/user0.png', 'Avocado bowl', '\$26.00'),
-                          _buildFoodItem('assets/images/user0.png', 'Berry bowl', '\$24.00')
+                          _buildFoodItem("assets/images/restaurante1.jpg", 'MUU Steakhouse', '4.9 (120 reviews)'),
+                          _buildFoodItem("assets/images/restaurante1.jpg", 'MUU Steakhouse', '4.9 (120 reviews)'),
+                          _buildFoodItem("assets/images/restaurante1.jpg", 'MUU Steakhouse', '4.9 (120 reviews)'),
+                          _buildFoodItem("assets/images/restaurante1.jpg", 'MUU Steakhouse', '4.9 (120 reviews)')
                         ]))),
               ],
             ),
@@ -83,7 +83,7 @@ class _TastewishState extends State<Tastewish> {
 
   Widget _buildFoodItem(String imgPath, String foodName, String price) {
     return Padding(
-        padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
+        padding: EdgeInsets.only(left: 10.0, right: 20.0, top: 30.0),
         child: InkWell(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
@@ -96,16 +96,19 @@ class _TastewishState extends State<Tastewish> {
                 Container(
                     child: Row(
                         children: [
-                          Hero(
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(25.0),
+                            child: Hero(
                               tag: imgPath,
                               child: Image(
-                                  image: AssetImage(imgPath),
-                                  fit: BoxFit.cover,
-                                  height: 75.0,
-                                  width: 75.0
-                              )
+                                image: AssetImage(imgPath),
+                                fit: BoxFit.cover,
+                                height: 90.0,
+                                width: 90.0,
+                              ),
+                            ),
                           ),
-                          SizedBox(width: 10.0),
+                          SizedBox(width: 12.0),
                           Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children:[
@@ -125,16 +128,12 @@ class _TastewishState extends State<Tastewish> {
                                         color: Colors.grey
                                     )
                                 )
+
                               ]
                           )
                         ]
                     )
                 ),
-                IconButton(
-                    icon: Icon(Icons.favorite),
-                    color: Colors.red,
-                    onPressed: () {}
-                )
               ],
             )
         ));

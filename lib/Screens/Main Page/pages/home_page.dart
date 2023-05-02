@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ionicons/ionicons.dart';
-import 'package:tastebudz/Screens/Main Page/widgets/custom_icon_button.dart';
-import 'package:tastebudz/Screens/Main Page/widgets/location_card.dart';
 import 'package:tastebudz/Screens/Main Page/widgets/nearby_places.dart';
 import 'package:tastebudz/Screens/Main Page/widgets/popular.dart';
 import 'package:tastebudz/Screens/Main Page/widgets/tourist_places.dart';
