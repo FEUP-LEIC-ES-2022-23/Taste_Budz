@@ -78,7 +78,6 @@ flutter:
   assets:
     - assets/images/splash_screen.jpeg
     - assets/images/
-    - assets/places/
     - assets/icons/
     - assets/
 

@@ -1,15 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:tastebudz/Screens/Login/login_form.dart';
 import '../../firebase/auth.dart';
-import '../../components/already_have_an_account_acheck.dart';
-import '../../components/background.dart';
 import '../../components/constants.dart';
 import '../Welcome/location.dart';
-import '../../components/responsive.dart';
-import '../Login/login_screen.dart';
-
 
 class SignUpPageWidget extends StatefulWidget {
   @override
