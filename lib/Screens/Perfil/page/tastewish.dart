@@ -24,10 +24,7 @@ class _TastewishState extends State<Tastewish> {
                 IconButton(
                   icon: Icon(Icons.arrow_back_ios),
                   color: Colors.white,
-                  onPressed: () {Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ProfilePage()),
-                  );},
+                  onPressed: () {Navigator.pop(context);},
                 ),
               ],
             ),

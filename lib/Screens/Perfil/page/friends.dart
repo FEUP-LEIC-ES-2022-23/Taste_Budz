@@ -25,10 +25,7 @@ class _FriendsState extends State<Friends> {
                 IconButton(
                   icon: Icon(Icons.arrow_back_ios),
                   color: Colors.white,
-                  onPressed: () {Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => mainpage()),
-                  );},
+                  onPressed: () {Navigator.pop(context);},
                 ),
               ],
             ),

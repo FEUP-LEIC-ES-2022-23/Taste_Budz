@@ -16,17 +16,11 @@ class CustomLikedNotifcation extends StatelessWidget {
           child: Stack(children: const [
             Padding(
               padding: EdgeInsets.only(left: 8),
-              child: CircleAvatar(
-                radius: 20,
-                backgroundImage: AssetImage("assets/images/Avatar3.png"),
-              ),
+
             ),
-            Positioned(
-              bottom: 8,
-              child: CircleAvatar(
-                radius: 20,
-                backgroundImage: AssetImage("assets/images/Avatar2.png"),
-              ),
+            const CircleAvatar(
+              radius: 25,
+              backgroundImage: AssetImage("assets/images/platee.jpg"),
             ),
           ]),
         ),
@@ -38,40 +32,22 @@ class CustomLikedNotifcation extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              RichText(
-                maxLines: 2,
-                text: TextSpan(
-                    text: "John Steve",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline5!
-                        .copyWith(color: mainText),
-                    children: [
-                      TextSpan(
-                        text: " and \n",
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText2!
-                            .copyWith(color: SecondaryText),
-                      ),
-                      const TextSpan(text: "Sam Winchester")
-                    ]),
+              Text(
+                "New recommendation",
+                style: Theme.of(context)
+                    .textTheme
+                    .headline5!
+                    .copyWith(color: mainText),
               ),
-              const SizedBox(
-                height: 4,
+              const SizedBox(height: 5),
+              Text(
+                "Check it out now.",
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText2!
+                    .copyWith(color: SecondaryText),
               ),
-              Text("Liked your recipe.",
-                  style: Theme.of(context)
-                      .textTheme
-                      .subtitle1!
-                      .copyWith(color: SecondaryText)),
-            ],
-          ),
-        ),
-        Image.asset(
-          "assets/images/Cover.png",
-          height: 48,
-          width: 48,
+          ]),
         ),
       ],
     );

@@ -34,16 +34,16 @@ class _CustomFollowNotifcationState extends State<CustomFollowNotifcation> {
                 "Dean Winchester",
                 style: Theme.of(context)
                     .textTheme
-                    .headline6!
+                    .headline5!
                     .copyWith(color: mainText),
               ),
               const SizedBox(height: 5),
               Text(
-                "New following you. h1",
+                "New following you.",
                 style: Theme.of(context)
                     .textTheme
                     .bodyText2!
-                    .copyWith(color: mainText),
+                    .copyWith(color: SecondaryText),
               ),
             ],
           ),

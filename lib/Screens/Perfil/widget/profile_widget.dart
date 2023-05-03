@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:tastebudz/Screens/Perfil/page/friends.dart';
 
+import '../page/Settings/edit_profile.dart';
+
 class ProfileWidget extends StatelessWidget {
   final String imagePath;
   final bool isEdit;
@@ -56,7 +58,7 @@ class ProfileWidget extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => Friends(),
+            builder: (context) => EditProfilePage(),
           ),
         );
       },

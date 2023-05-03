@@ -152,7 +152,7 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                               width: 110,
                               height: 110,
                               decoration: BoxDecoration(
-                                color: Colors.blue,
+                                color: Colors.transparent,
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Center(
