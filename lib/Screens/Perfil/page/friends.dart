@@ -101,8 +101,8 @@ class _FriendsState extends State<Friends> {
                               child: Image(
                                 image: AssetImage(imgPath),
                                 fit: BoxFit.cover,
-                                height: 50.0,
-                                width: 50.0,
+                                height: 60.0,
+                                width: 60.0,
                               ),
                             ),
                           ),
