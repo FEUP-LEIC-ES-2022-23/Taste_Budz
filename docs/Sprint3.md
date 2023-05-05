@@ -1,5 +1,5 @@
 # Release
-https://github.com/FEUP-LEIC-ES-2022-23/2LEIC0105/releases/tag/v0.3.0
+https://github.com/FEUP-LEIC-ES-2022-23/2LEIC0105/releases/tag/v0.4.0
 
 
 # Sprint Retrospective
@@ -13,6 +13,7 @@ https://github.com/FEUP-LEIC-ES-2022-23/2LEIC0105/releases/tag/v0.3.0
 
 - Communication;
 - Bad work distribution;
+- Creating Gherkin aceptance tests; 
 
 
  ## What have I learned?
