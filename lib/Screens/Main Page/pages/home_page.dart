@@ -4,6 +4,7 @@ import 'package:tastebudz/Screens/Main Page/widgets/popular.dart';
 import 'package:tastebudz/Screens/Main Page/widgets/tourist_places.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tastebudz/Screens/Main%20Page/constants.dart';
+import 'package:tastebudz/Screens/Main%20Page/pages/viewall.dart';
 
 import '../rating/rating_page.dart';
 import '../widgets/search_form.dart';
@@ -101,8 +102,12 @@ class HomePage extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => RestaurantScreen()),
+                    );
                   },
+
                   child: const Text("View All"),
                   style: ButtonStyle(
                     foregroundColor: MaterialStateProperty.all<Color>(const Color(0xFFFFB080)),
@@ -120,7 +125,13 @@ class HomePage extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => RestaurantScreen()),
+                    );
+                  },
+
                   child: const Text("View All"),
                   style: ButtonStyle(
                     foregroundColor: MaterialStateProperty.all<Color>(const Color(0xFFFFB080)),

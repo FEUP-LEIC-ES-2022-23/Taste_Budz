@@ -1,3 +1,4 @@
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tastebudz/Screens/Login/login_form.dart';
@@ -44,10 +45,14 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
             Padding
               (
               padding: EdgeInsets.symmetric(
-                  horizontal: width * 0.01, vertical: height * .15),
+                  horizontal: width * 0.01),
               child: SafeArea(
                 child: Container(
                     child: Column(children: <Widget>[
+                      SizedBox(
+                        height: height * 0.15,
+                      ),
+
                       Text(
                         'Getting started!',
                         textAlign: TextAlign.center,
@@ -91,11 +96,66 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                           cursorColor: kPrimaryColor,
                           decoration: InputDecoration(
                             hintText: "Your email",
-                            prefixIcon: const Icon(Icons.person, color: Color.fromARGB(255, 255, 177, 128)),
+                            prefixIcon: const Icon(Icons.mail, color: Color.fromARGB(255, 255, 177, 128)),
                             contentPadding: EdgeInsets.only(),
                             filled: true,
                             errorText: error_message,
                             fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.black),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            vertical: height * .01
+                        ),
+                      ),
+                      Container(
+                        height: height * 0.06,
+                        width: width * 0.8,
+                        child: TextField(
+                          controller: display_name_controller,
+                          textAlign: TextAlign.left,
+                          textAlignVertical: TextAlignVertical.center,
+                          cursorColor: kPrimaryColor,
+
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.only(),
+                            filled: true,
+                            errorText: error_message,
+                            fillColor: Colors.white,
+                            hintText: "Your name",
+                            prefixIcon: const Icon(Icons.person, color: Color.fromARGB(255, 255, 177, 128)),
+                            border: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.black),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            vertical: height * .01
+                        ),
+                      ),
+                      Container(
+                        height: height * 0.06,
+                        width: width * 0.8,
+                        child: TextField(
+                          controller: username_controller,
+                          textAlign: TextAlign.left,
+                          textAlignVertical: TextAlignVertical.center,
+                          cursorColor: kPrimaryColor,
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.only(),
+                            filled: true,
+                            errorText: error_message,
+                            fillColor: Colors.white,
+                            hintText: "Your username",
+                            prefixIcon: const Icon(Icons.edit, color: Color.fromARGB(255, 255, 177, 128)),
                             border: OutlineInputBorder(
                               borderSide: const BorderSide(color: Colors.black),
                               borderRadius: BorderRadius.circular(15),
@@ -177,12 +237,6 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                        ),
-                      ),
-
-                      Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: height * .046
                         ),
                       ),
                       Container(

@@ -43,7 +43,6 @@ dependencies:
   firebase_core: ^2.7.1
   firebase_auth: ^4.4.2
   animated_theme_switcher: ^2.0.8
-
 dev_dependencies:
   test: any
   flutter_svg: ^0.22.0

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tastebudz/Screens/Main%20Page/constants.dart';
 
+import '../pages/filters.dart';
+
 
 
 const OutlineInputBorder outlineInputBorder = OutlineInputBorder(
@@ -44,7 +46,16 @@ class SearchForm extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
                 ),
-                onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return FiltersPage();
+                        },
+                      ),
+                    );
+                  },
                 child: SvgPicture.asset("assets/icons/Filter.svg"),
               ),
             ),

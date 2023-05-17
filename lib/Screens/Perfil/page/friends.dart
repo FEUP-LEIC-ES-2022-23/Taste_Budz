@@ -83,11 +83,6 @@ class _FriendsState extends State<Friends> {
     return Padding(
         padding: EdgeInsets.only(left: 10.0, right: 20.0, top: 30.0),
         child: InkWell(
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => DetailsPage(heroTag: imgPath, foodName: foodName, foodPrice: price)
-              ));
-            },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
