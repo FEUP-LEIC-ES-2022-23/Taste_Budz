@@ -6,6 +6,9 @@ import 'package:flutter/services.dart';
 import 'package:tastebudz/components/constants.dart';
 import 'package:tastebudz/Screens/Welcome/second.dart';
 
+Future<void> initializeFirebase() async {
+  await Firebase.initializeApp();
+}
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

@@ -35,6 +35,8 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Material(
+      child: SingleChildScrollView(
+
       child: Container(
         child: Column(
           children: [
@@ -225,6 +227,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
             ),
           ],
         ),
+      ),
       ),
     );
   }
