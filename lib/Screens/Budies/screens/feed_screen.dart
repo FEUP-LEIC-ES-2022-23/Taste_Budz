@@ -155,7 +155,7 @@ class _FeedScreenState extends State<FeedScreen> {
         physics: AlwaysScrollableScrollPhysics(),
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 35),
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -169,7 +169,7 @@ class _FeedScreenState extends State<FeedScreen> {
                 ),
                 Row(
                   children: <Widget>[
-                    SizedBox(width: 16.0),
+                    SizedBox(width: 5.0), // Adjust the width as per your preference
                   ],
                 )
               ],
@@ -187,31 +187,33 @@ class _FeedScreenState extends State<FeedScreen> {
                 }
                 return Container(
                   margin: EdgeInsets.all(10.0),
-                  child: ElevatedButton(
+                  child: TextButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => StoryPage(),
+                          builder: (context) => const StoryPage(),
                         ),
                       );
                     },
-
-                      child: ClipOval(
-                        child: Image(
-                          height: 70.0,
-                          width: 70.0,
-                          image: AssetImage(stories[index - 1]),
-                          fit: BoxFit.cover,
-                        ),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                      padding: MaterialStateProperty.all(EdgeInsets.zero),
+                      shape: MaterialStateProperty.all(const CircleBorder()),
+                    ),
+                    child: ClipOval(
+                      child: Image(
+                        height: 70.0,
+                        width: 70.0,
+                        image: AssetImage(stories[index - 1]),
+                        fit: BoxFit.cover,
                       ),
-                    )
+                    ),
+                  ),
                 );
               },
             ),
           ),
-
-
           _buildPost(0),
           _buildPost(1),
         ],

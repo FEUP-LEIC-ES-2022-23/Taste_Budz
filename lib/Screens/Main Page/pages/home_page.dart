@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tastebudz/Screens/Main Page/widgets/nearby_places.dart';
 import 'package:tastebudz/Screens/Main Page/widgets/popular.dart';
-import 'package:tastebudz/Screens/Main Page/widgets/tourist_places.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tastebudz/Screens/Main%20Page/constants.dart';
 import 'package:tastebudz/Screens/Main%20Page/pages/viewall.dart';
@@ -90,7 +89,6 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 2,
             ),
-            const TouristPlaces(),
             // CATEGORIES
             const SizedBox(height: 10),
             Row(
