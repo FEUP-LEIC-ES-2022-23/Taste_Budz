@@ -12,7 +12,7 @@ void main() {
 
     expect(find.text('Share your location with us !'), findsOneWidget);
 
-    expect(find.text('To discover nearby restaurants, please provide your location.'), findsOneWidget);
+    expect(find.text('To discover nearby restaurants.dart, please provide your location.'), findsOneWidget);
 
     expect(find.text('Enter a new location'), findsOneWidget);
 

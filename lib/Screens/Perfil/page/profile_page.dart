@@ -6,6 +6,19 @@ import 'package:tastebudz/Screens/Perfil/widget/button_widget.dart';
 import 'package:tastebudz/Screens/Perfil/widget/numbers_widget.dart';
 import 'package:tastebudz/Screens/Perfil/widget/profile_widget.dart';
 
+import 'package:flutter/material.dart';
+import 'package:tastebudz/Screens/Perfil/model/user.dart';
+import 'package:tastebudz/Screens/Perfil/page/rewards.dart';
+import 'package:tastebudz/Screens/Perfil/utils/user_preferences.dart';
+import 'package:tastebudz/Screens/Perfil/widget/appbar_widget.dart';
+import 'package:tastebudz/Screens/Perfil/widget/button_widget.dart';
+import 'package:tastebudz/Screens/Perfil/widget/numbers_widget.dart';
+import 'package:tastebudz/Screens/Perfil/widget/profile_widget.dart';
+
+import '../../../firebase/auth.dart';
+
+
+
 class ProfilePage extends StatefulWidget {
   @override
   _ProfilePageState createState() => _ProfilePageState();
@@ -49,7 +62,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 left: 19,
                 top: 2,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    AuthService().logout(); // Call the logout method from the authentication service
+                  },
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.zero,
                     shape: RoundedRectangleBorder(
@@ -60,24 +75,33 @@ class _ProfilePageState extends State<ProfilePage> {
                     side: BorderSide(
                       color: Color(0xffe6f0f5),
                     ),
+                    minimumSize: Size(56, 56), // Set the minimum size for the log out button
                   ),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    height: 63,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(Icons.card_giftcard, color: Colors.black, size: 33),
-                        SizedBox(width: 0),
-                      ],
-                    ),
-                  ),
+                  child: Icon(Icons.logout, color: Colors.black, size: 33), // Change the icon to a log out icon
+                ),
+              ),
+
+              Positioned(
+                right: 19, // Add this line to position the gift button on the right
+                top: 2, // Add this line to align the gift button with the log out button
+                child: FloatingActionButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoyaltyRewardsScreen(),
+                      ),
+                    );
+                  },
+                  child: Icon(Icons.card_giftcard, color: Colors.black), // Set the icon color to black
+                  backgroundColor: Colors.white, // Set the background color to white
                 ),
               ),
             ],
           ),
         ],
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endTop,
     );
   }
 

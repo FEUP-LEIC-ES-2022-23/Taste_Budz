@@ -45,7 +45,7 @@ class LocationScreen extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.only(top: 20),
                   child: const Text(
-                    'To discover nearby restaurants, please provide your location.',
+                    'To discover nearby restaurants.dart, please provide your location.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Color.fromRGBO(142, 142, 169, 1),

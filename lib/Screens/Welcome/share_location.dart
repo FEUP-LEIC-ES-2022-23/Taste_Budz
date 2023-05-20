@@ -8,7 +8,7 @@ class ShareLocationPage extends StatefulWidget {
       : super(key: key);
 
   @override
-  _ShareLocationPageState createState() => _ShareLocationPageState();
+  State<ShareLocationPage> createState() => _ShareLocationPageState();
 }
 
 class _ShareLocationPageState extends State<ShareLocationPage> {
@@ -19,12 +19,11 @@ class _ShareLocationPageState extends State<ShareLocationPage> {
     _cityController.dispose();
     super.dispose();
   }
-  String _city = '';
   @override
   Widget build(BuildContext context) {
 
     const titleText = 'Share your location with us !';
-    final titleTextStyle = TextStyle(
+    const titleTextStyle = TextStyle(
       color: Color.fromRGBO(50, 50, 77, 1),
       fontFamily: 'DM Sans',
       fontSize: 24,
@@ -32,9 +31,9 @@ class _ShareLocationPageState extends State<ShareLocationPage> {
       fontWeight: FontWeight.bold,
       height: 1.25,
     );
-    final descriptionText =
+    const descriptionText =
         'Let us help you find great dining options in your area. Please enter your location.';
-    final descriptionTextStyle = TextStyle(
+    const descriptionTextStyle = TextStyle(
       color: Color.fromRGBO(142, 142, 169, 1),
       fontFamily: 'Mulish',
       fontSize: 16,
@@ -46,17 +45,17 @@ class _ShareLocationPageState extends State<ShareLocationPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
-        decoration: BoxDecoration(),
-        padding: EdgeInsets.symmetric(horizontal: 0, vertical: 100),
+        decoration: const BoxDecoration(),
+        padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 100),
         child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
         Container(
-        decoration: BoxDecoration(),
-        padding: EdgeInsets.symmetric(horizontal: 0, vertical: 20),
+        decoration: const BoxDecoration(),
+        padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 20),
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
+          children: const <Widget>[
             Text(
               titleText,
               textAlign: TextAlign.center,
@@ -72,11 +71,11 @@ class _ShareLocationPageState extends State<ShareLocationPage> {
         ),
       ),
       Container(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
+            const Text(
               'Enter the city you are in:',
                 style: TextStyle(
                   color: Color.fromRGBO(142, 142, 169, 1),
@@ -87,7 +86,7 @@ class _ShareLocationPageState extends State<ShareLocationPage> {
                   height: 1.75,
                 )
             ),
-            SizedBox(height: 8.0),
+            const SizedBox(height: 8.0),
             TextFormField(
               controller: _cityController,
               decoration: InputDecoration(
@@ -95,14 +94,14 @@ class _ShareLocationPageState extends State<ShareLocationPage> {
                 hintText: 'e.g. Porto',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.grey,
                     width: 1.0,
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: Colors.grey,
                     width: 1.0,
                   ),
@@ -110,19 +109,18 @@ class _ShareLocationPageState extends State<ShareLocationPage> {
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
                   borderSide: BorderSide(
-                    color: Theme.of(context).accentColor,
+                    color: Theme.of(context).colorScheme.secondary,
                     width: 2.0,
                   ),
                 ),
               ),
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16.0,
                 color: Colors.black,
                 fontWeight: FontWeight.normal,
               ),
               onChanged: (value) {
                 setState(() {
-                  _city = value;
                 });
               },
             ),
@@ -140,7 +138,7 @@ class _ShareLocationPageState extends State<ShareLocationPage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return EnjoyScreen();
+                        return const EnjoyScreen();
                       },
                     ),
                   );
@@ -148,7 +146,7 @@ class _ShareLocationPageState extends State<ShareLocationPage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFFFB080),
                 ),
-                child: Text(
+                child: const Text(
                   "Continue",
                   style: TextStyle(
                     color: Colors.white,

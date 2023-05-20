@@ -1,14 +1,15 @@
 import 'dart:ui';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tastebudz/Screens/Main%20Page/pages/home_page.dart';
+import 'package:tastebudz/Screens/mainpage.dart';
 import 'package:tastebudz/components/constants.dart';
 import 'package:tastebudz/Screens/Welcome/second.dart';
+import 'package:tastebudz/api/api.dart';
 
-Future<void> initializeFirebase() async {
-  await Firebase.initializeApp();
-}
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -52,7 +53,18 @@ class MyApp extends StatelessWidget {
           )),
       home: Splash(),
       routes: <String, WidgetBuilder>{
-        '/SecondScreen': (BuildContext context) => SecondScreen(),
+        '/SecondScreen': (BuildContext context) => Scaffold(
+          body: StreamBuilder<User?>(
+            stream: FirebaseAuth.instance.authStateChanges(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return const mainpage();
+              } else  {
+                return const SecondScreen();
+              }
+            },
+          ),
+        ),
       },
     );
   }
@@ -64,12 +76,19 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+
+  testResponse() async {
+    print(await api.getInfoCity('Porto'));
+    print(await api.getInfoFromCity('189180'));
+  }
+
   @override
   void initState() {
-    super.initState();
     Future.delayed(Duration(seconds: 3), () {
       Navigator.of(context).pushReplacementNamed('/SecondScreen');
     });
+    testResponse();
+    super.initState();
   }
 
   @override
