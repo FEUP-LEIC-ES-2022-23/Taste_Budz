@@ -1,16 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:tastebudz/Screens/Main Page/models/nearby_places_model.dart';
-
-
+import '../../../firebase/database_handler.dart';
+import '../../../model/restaurants.dart';
 import '../pages/details/view/product_details.dart';
 
-class NearbyPlaces extends StatelessWidget {
+class NearbyPlaces extends StatefulWidget {
   const NearbyPlaces({Key? key}) : super(key: key);
+
+  @override
+  _NearbyPlacesState createState() => _NearbyPlacesState();
+}
+
+class _NearbyPlacesState extends State<NearbyPlaces> {
+  List<Restaurant> restaurants = [];
+  DatabaseHandler databaseHandler = DatabaseHandler();
+
+  @override
+  void initState() {
+    super.initState();
+    fetchRestaurants();
+  }
+
+  void fetchRestaurants() async {
+    print('Fetching restaurants...');
+    try {
+      List<Restaurant> fetchedRestaurants = await databaseHandler.getAllRestaurants();
+      print('Fetched ${fetchedRestaurants.length} restaurants');
+      setState(() {
+        restaurants = fetchedRestaurants;
+      });
+    } catch (error) {
+      print('Error fetching restaurants: $error');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: List.generate(nearbyPlaces.length, (index) {
+      children: restaurants.map((restaurant) {
         return Padding(
           padding: const EdgeInsets.only(bottom: 10),
           child: SizedBox(
@@ -25,12 +52,11 @@ class NearbyPlaces extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 onTap: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ProductDetailsView(
-
-                        ),
-                      ));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProductDetailsView(),
+                    ),
+                  );
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -38,8 +64,8 @@ class NearbyPlaces extends StatelessWidget {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(12),
-                        child: Image.asset(
-                          nearbyPlaces[index].image,
+                        child: Image.network(
+                          restaurant.photo,
                           height: double.maxFinite,
                           width: 130,
                           fit: BoxFit.cover,
@@ -51,7 +77,7 @@ class NearbyPlaces extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Casa de Pasto da Palmeira',
+                              restaurant.name,
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                 color: Color(0xFF111111),
@@ -62,24 +88,20 @@ class NearbyPlaces extends StatelessWidget {
                                 height: 1.5,
                               ),
                             ),
-
                             const SizedBox(height: 5),
                             Text(
-                              "Comida tradicional portuguesa",
+                              restaurant.description,
                               textAlign: TextAlign.left,
                               style: TextStyle(
-                                  color: Color.fromRGBO(120, 130, 138, 1),
-                                  fontFamily: 'Plus Jakarta Sans',
-                                  fontSize: 15,
-                                  letterSpacing: 0,
-                                  fontWeight: FontWeight.normal,
-                                  height: 1.6666666666666667
+                                color: Color.fromRGBO(120, 130, 138, 1),
+                                fontFamily: 'Plus Jakarta Sans',
+                                fontSize: 15,
+                                letterSpacing: 0,
+                                fontWeight: FontWeight.normal,
+                                height: 1.6666666666666667,
                               ),
                             ),
-
                             const SizedBox(height: 5),
-                            // DISTANCE WIDGET
-
                             const Spacer(),
                             Row(
                               children: [
@@ -88,8 +110,8 @@ class NearbyPlaces extends StatelessWidget {
                                   color: Colors.yellow.shade700,
                                   size: 16,
                                 ),
-                                const Text(
-                                  "4.5",
+                                Text(
+                                  restaurant.rating,
                                   style: TextStyle(
                                     fontSize: 14,
                                   ),
@@ -97,25 +119,27 @@ class NearbyPlaces extends StatelessWidget {
                                 const Spacer(),
                                 RichText(
                                   text: TextSpan(
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        color: Color(0xFFFFB080),
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Color(0xFFFFB080),
+                                    ),
+                                    text: '',
+                                    children: const [
+                                      TextSpan(
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.black54,
+                                        ),
+                                        text: '',
                                       ),
-                                      text: "",
-                                      children: const [
-                                        TextSpan(
-                                            style: TextStyle(
-                                              fontSize: 12,
-                                              color: Colors.black54,
-                                            ),
-                                            text: "")
-                                      ]),
-                                )
+                                    ],
+                                  ),
+                                ),
                               ],
-                            )
+                            ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -123,7 +147,7 @@ class NearbyPlaces extends StatelessWidget {
             ),
           ),
         );
-      }),
+      }).toList(),
     );
   }
 }

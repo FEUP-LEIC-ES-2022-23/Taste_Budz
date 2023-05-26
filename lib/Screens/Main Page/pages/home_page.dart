@@ -66,7 +66,7 @@ class HomePage extends StatelessWidget {
               height: 6,
             ),
             Text(
-              "Welcome back,",
+              "Welcome to our",
               style: TextStyle(
                 fontFamily: 'Manrope',
                 fontWeight: FontWeight.normal,
@@ -75,7 +75,7 @@ class HomePage extends StatelessWidget {
             ),
 
             Text(
-              "Emma Johnson",
+              "  TasteBudz ",
               style: TextStyle(
                 fontFamily: 'Manrope',
                 fontWeight: FontWeight.bold,
@@ -113,7 +113,7 @@ class HomePage extends StatelessWidget {
                 )
               ],
             ),
-            const RecommendedPlaces(),
+             RecommendedPlaces(),
             const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -138,7 +138,7 @@ class HomePage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 10),
-            const NearbyPlaces(),
+             NearbyPlaces(),
           ],
         ),
       ));
