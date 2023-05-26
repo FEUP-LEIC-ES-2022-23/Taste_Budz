@@ -44,6 +44,7 @@ dependencies:
   mockito: ^5.1.0
   animated_theme_switcher: ^2.0.8
   cloud_firestore: any
+  url_launcher: any
 
 dev_dependencies:
   test: any

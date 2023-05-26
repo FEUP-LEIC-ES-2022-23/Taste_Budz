@@ -5,6 +5,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:tastebudz/Screens/Main Page/pages/details/controller/product_controller.dart';
 import 'package:tastebudz/Screens/Main Page/pages/details/model/sm_product_model.dart';
 import 'package:tastebudz/Screens/Main Page/pages/details/utils/color.dart';
@@ -24,11 +25,14 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
   bool isFavourite = false; // Add a boolean state to track if the heart icon is filled or not
 
   final List<SmProduct> smProducts = [
-    SmProduct(image: "assets/images/restaurante1.jpg"),
-    SmProduct(image: "assets/images/restaurante1.jpg"),
-    SmProduct(image: "assets/images/restaurante1.jpg",),
-    SmProduct(image: "assets/images/restaurante1.jpg",),
+    SmProduct(image: "assets/409658.jpg"),
+    SmProduct(image: "assets/409648.jpg"),
+    SmProduct(image: "assets/brasao-cervejaria-coliseu.jpg"),
   ];
+
+  final String email = 'reservas@brasao.pt';
+  final String phone = '+351 931 989 364';
+  final String website = 'https://www.tripadvisor.com/Restaurant_Review-g189180-d12248008-Reviews-Brasao_Coliseu-Porto_Porto_District_Northern_Portugal.html';
 
   @override
   Widget build(BuildContext context) {
@@ -49,48 +53,73 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
             color: Colors.black,
           ),
         ),
-
         actions: [
           IconButton(
             onPressed: () {
-              setState(() { // Update the state of isFavourite on tap
+              setState(() {
                 isFavourite = !isFavourite;
               });
             },
-            icon: Icon( // Use a ternary operator to display a different icon based on the state of isFavourite
+            icon: Icon(
               isFavourite ? Ionicons.heart : Ionicons.heart_outline,
               color: isFavourite ? Colors.red : Colors.black,
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              _launchEmail(email);
+            },
+            icon: Icon(
+              Icons.email,
+              color: Colors.black,
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              _launchPhone(phone);
+            },
+            icon: Icon(
+              Icons.phone,
+              color: Colors.black,
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              _launchWebsite(website);
+            },
+            icon: Icon(
+              Icons.language,
+              color: Colors.black,
             ),
           ),
         ],
       ),
       body: Column(
         children: [
-      Container(
-      width: MediaQuery.of(context).size.width * 0.9,
-      height: MediaQuery.of(context).size.height * 0.35,
-      child: Stack(
-        children: <Widget>[
-          Positioned(
-            top: 0,
-            left: 0,
-            child: Container(
-              width: MediaQuery.of(context).size.width * 0.9,
-              height: MediaQuery.of(context).size.height * 0.35,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(32),
-                image: DecorationImage(
-                  image: AssetImage('assets/images/restaurante1.jpg'),
-                  fit: BoxFit.cover,
+          Container(
+            width: MediaQuery.of(context).size.width * 0.9,
+            height: MediaQuery.of(context).size.height * 0.35,
+            child: Stack(
+              children: <Widget>[
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.9,
+                    height: MediaQuery.of(context).size.height * 0.35,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(32),
+                      image: DecorationImage(
+                        image: NetworkImage('https://media-cdn.tripadvisor.com/media/photo-s/1b/d2/01/7a/francesinha.jpg'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
           ),
-        ],
-      ),
-    ),
-
-    Expanded(
+          Expanded(
             child: Stack(
               children: [
                 Container(
@@ -110,16 +139,9 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Terra Nova',
+                              'Brasão',
                               style: GoogleFonts.poppins(
                                 fontSize: 25,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            Text(
-                              '5k+ Rating',
-                              style: GoogleFonts.poppins(
-                                fontSize: 15,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -127,7 +149,7 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                         ),
                         const SizedBox(height: 18),
                         Text(
-                          'Neste restaurante de eleição para muitos, onde a sofisticação e a exigência são saboreadas em cada garfada, um dos pratos mais conceituados de Terra é o Bife Welligton, que corresponde a uma boa peça de carne, envolto de massa folhada e servido com arroz. Uma opção verdadeiramente extraordinária.',
+                          'Brasão Bistrô was created to share with you a timeless experience combining the past with the present. A comfortable and uncomplicated place where you can enjoy a personalized offer of crafts beers, traditional Francesinhas, Portuguese snacks and steaks. All this in a Portuguese home full of character, that is for sure! Group Menus available on the site.',
                           style: GoogleFonts.poppins(
                             fontSize: 15,
                             color: Colors.grey,
@@ -182,149 +204,140 @@ class _ProductDetailsViewState extends State<ProductDetailsView> {
                                   MaterialPageRoute(builder: (context) => RatingPage()),
                                 );
                               },
-                              child: Text("View All",
+                              child: Text(
+                                "View All",
                                 style: GoogleFonts.poppins(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xFFFFB080)
-                                ),),
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color(0xFFFFB080),
+                                ),
+                              ),
                             )
                           ],
                         ),
                         Column(
                           children: <Widget>[
                             Container(
-                                margin:
-                                const EdgeInsets.symmetric(vertical: 4.0),
-                                padding: const EdgeInsets.all(8.0),
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.all(
-                                        Radius.circular(20.0))),
-                                child: Row(
-                                  crossAxisAlignment:
-                                  CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Padding(
-                                      padding:
-                                      const EdgeInsets.only(right: 16.0),
-                                      child: CircleAvatar(
-                                        maxRadius: 20,
-                                        backgroundImage: AssetImage(
-                                            'assets/background.jpg'),
-                                      ),
+                              margin: const EdgeInsets.symmetric(vertical: 4.0),
+                              padding: const EdgeInsets.all(8.0),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(20.0),
+                                ),
+                              ),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 16.0),
+                                    child: CircleAvatar(
+                                      maxRadius: 20,
+                                      backgroundImage:
+                                      AssetImage('assets/background.jpg'),
                                     ),
-                                    Expanded(
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                        children: <Widget>[
-                                          Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment
-                                                .spaceBetween,
-                                            children: <Widget>[
-                                              Text(
-                                                'Billy Holand',
-                                                style: GoogleFonts.poppins(
-                                                  fontSize: 17,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                          children: <Widget>[
+                                            Text(
+                                              'John Doe',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold,
                                               ),
-                                              Text(
-                                                '10:28h',
-                                                style: GoogleFonts.poppins(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w600,
-                                                  color: Colors.grey,
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                          Padding(
-                                            padding:
-                                            const EdgeInsets.symmetric(
-                                                vertical: 8.0),
-                                            child: RatingBar(
-                                              ignoreGestures: true,
-                                              itemSize: 20,
-                                              allowHalfRating: true,
-
-                                              itemPadding:
-                                              EdgeInsets.symmetric(
-                                                  horizontal: 3.0),
-                                              ratingWidget: RatingWidget(
-                                                empty: Icon(
-                                                    Icons.star_border_outlined,
-                                                    color: Colors.orangeAccent,
-                                                    size: 20),
-                                                full: Icon(
-                                                  Icons.star,
-                                                  color: Colors.orangeAccent,
-                                                  size: 20,
-                                                ),
-                                                half: SizedBox(),
+                                            ),
+                                            Text(
+                                              '5.0',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold,
                                               ),
-                                              onRatingUpdate: (value) {
-                                                setState(() {
-
-                                                });
-                                                print(value);
-                                              },
                                             ),
+                                          ],
+                                        ),
+                                        const SizedBox(height: 4),
+                                        RatingBar.builder(
+                                          initialRating: 5,
+                                          minRating: 1,
+                                          itemSize: 16,
+                                          ignoreGestures: true,
+                                          allowHalfRating: true,
+                                          unratedColor: Colors.grey[300],
+                                          itemBuilder: (context, _) => Icon(
+                                            Icons.star,
+                                            color: Colors.amber,
                                           ),
-                                          Text(
-                                            'Not as I expected! ... I`m really sad',
-                                            style: GoogleFonts.poppins(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.normal,
-                                              color: Colors.grey,
-                                            ),
+                                          onRatingUpdate: (rating) {},
+                                        ),
+                                        const SizedBox(height: 4),
+                                        Text(
+                                          'The food was amazing! Highly recommend this place.',
+                                          style: TextStyle(
+                                            fontSize: 14,
                                           ),
-                                          Padding(
-                                            padding:
-                                            const EdgeInsets.symmetric(
-                                                vertical: 16.0),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                              MainAxisAlignment
-                                                  .spaceBetween,
-                                              children: <Widget>[
-
-                                              ],
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ))
-
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
                 ),
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: Container(
-                    margin: const EdgeInsets.only(top: 10),
-                    width: 50,
-                    height: 5,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                  ),
-                ),
+
               ],
             ),
           ),
         ],
       ),
-
     );
+  }
+
+  Future<void> _launchEmail(String email) async {
+    final Uri emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: email,
+    );
+    if (await canLaunch(emailLaunchUri.toString())) {
+      await launch(emailLaunchUri.toString());
+    } else {
+      throw 'Could not launch $email';
+    }
+  }
+
+  Future<void> _launchPhone(String phone) async {
+    final Uri phoneLaunchUri = Uri(
+      scheme: 'tel',
+      path: phone,
+    );
+    if (await canLaunch(phoneLaunchUri.toString())) {
+      await launch(phoneLaunchUri.toString());
+    } else {
+      throw 'Could not launch $phone';
+    }
+  }
+
+  Future<void> _launchWebsite(String website) async {
+    final Uri websiteLaunchUri = Uri(
+      scheme: 'https',
+      host: website,
+    );
+    if (await canLaunch(websiteLaunchUri.toString())) {
+      await launch(websiteLaunchUri.toString());
+    } else {
+      throw 'Could not launch $website';
+    }
   }
 }
