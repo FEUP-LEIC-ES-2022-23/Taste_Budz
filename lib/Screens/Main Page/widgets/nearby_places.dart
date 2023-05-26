@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:tastebudz/Screens/Main Page/models/nearby_places_model.dart';
 import '../../../firebase/database_handler.dart';
@@ -26,6 +28,10 @@ class _NearbyPlacesState extends State<NearbyPlaces> {
     try {
       List<Restaurant> fetchedRestaurants = await databaseHandler.getAllRestaurants();
       print('Fetched ${fetchedRestaurants.length} restaurants');
+
+      // Shuffle the fetched restaurants randomly
+      fetchedRestaurants.shuffle(Random());
+
       setState(() {
         restaurants = fetchedRestaurants;
       });
@@ -90,7 +96,7 @@ class _NearbyPlacesState extends State<NearbyPlaces> {
                             ),
                             const SizedBox(height: 5),
                             Text(
-                              restaurant.description,
+                              restaurant.cuisine,
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                 color: Color.fromRGBO(120, 130, 138, 1),

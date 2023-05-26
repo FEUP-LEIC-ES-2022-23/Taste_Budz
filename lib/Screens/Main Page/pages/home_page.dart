@@ -119,22 +119,9 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Nearby From You",
+                  "For You",
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => RestaurantScreen()),
-                    );
-                  },
-
-                  child: const Text("View All"),
-                  style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.all<Color>(const Color(0xFFFFB080)),
-                  ),
-                )
               ],
             ),
             const SizedBox(height: 10),
