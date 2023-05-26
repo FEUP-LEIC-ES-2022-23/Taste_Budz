@@ -66,7 +66,7 @@ class HomePage extends StatelessWidget {
               height: 6,
             ),
             Text(
-              "Welcome back,",
+              "Welcome to our",
               style: TextStyle(
                 fontFamily: 'Manrope',
                 fontWeight: FontWeight.normal,
@@ -75,7 +75,7 @@ class HomePage extends StatelessWidget {
             ),
 
             Text(
-              "Emma Johnson",
+              "  TasteBudz ",
               style: TextStyle(
                 fontFamily: 'Manrope',
                 fontWeight: FontWeight.bold,
@@ -113,32 +113,19 @@ class HomePage extends StatelessWidget {
                 )
               ],
             ),
-            const RecommendedPlaces(),
+             RecommendedPlaces(),
             const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Nearby From You",
+                  "For You",
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => RestaurantScreen()),
-                    );
-                  },
-
-                  child: const Text("View All"),
-                  style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.all<Color>(const Color(0xFFFFB080)),
-                  ),
-                )
               ],
             ),
             const SizedBox(height: 10),
-            const NearbyPlaces(),
+             NearbyPlaces(),
           ],
         ),
       ));
